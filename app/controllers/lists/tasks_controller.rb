@@ -5,7 +5,14 @@ class Lists::TasksController < ApplicationController
 
   # GET /lists/tasks
   def index
-    @tasks = @list.tasks.all
+    #sorting logic using query params
+    tasks = @list.tasks.all
+    if params[:sort]
+      @tasks = @list.tasks.order('due_date ASC') if params[:sort] == 'ASC'
+      @tasks = @list.tasks.order('due_date DESC') if params[:sort] == 'DESC'
+    else
+      @tasks = tasks
+    end
   end
 
   # GET /lists/tasks/1
