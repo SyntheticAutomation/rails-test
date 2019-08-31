@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  respond_to :html, :json
+  
   # GET /lists
   def index
     @lists = List.all
