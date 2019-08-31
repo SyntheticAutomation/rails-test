@@ -9,4 +9,5 @@ group :test, :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'capybara'
+  gem 'launchy'
 end
