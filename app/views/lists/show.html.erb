@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
+<h1 class="display-3 main-heading">
   <%= @list.title %>
-</p>
+</h1>
 
-<%= link_to 'Tasks', list_tasks_path(@list) %> |
+<div class="actions">
+  <%= link_to 'View Tasks', list_tasks_path(@list) %> |
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+  <%= link_to 'Edit Title', edit_list_path(@list) %> |
+  <%= link_to 'Go Back', lists_path %>
+</div>

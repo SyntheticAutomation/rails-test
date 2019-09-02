@@ -1,5 +1,7 @@
-<h1>New list</h1>
+<h1 class="display-3 main-heading">What will you create today?</h1>
+<%= link_to 'Go back', lists_path, class: "go-back-link" %>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', lists_path %>
+<%= render "quote" %>
+

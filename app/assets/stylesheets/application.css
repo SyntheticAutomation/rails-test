@@ -12,4 +12,60 @@
  *= require bootstrap-theme.min
  *= require_self
  */
+ *, a, .blockquote-footer {
+   color: white;
+ }
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("productivity.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+ }
+
+.main-heading {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.list-action {
+  font-style: italic;
+}
+
+.list-title:hover,
+.list-action:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.new-list-button {
+  margin-bottom: 50px;
+}
+
+.blockquote {
+  margin-top: 400px;
+}
+
+.field,
+.actions {
+  text-align: center;
+  margin: 15px;
+}
+
+.new-list-field {
+  color: black;
+}
+
+.go-back-link:hover {
+  color: white;
+}
+
+.btn-sort,
+.btn-sort:hover {
+  margin: 10px;
+  color: white;
+}
+
+
 

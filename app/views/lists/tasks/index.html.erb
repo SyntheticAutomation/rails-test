@@ -1,11 +1,11 @@
 <h1>List Tasks</h1>
+<%= link_to 'New Task', new_list_task_path(@list), class: 'btn btn-dark btn-sort' %>
 
-<%= link_to "Sort by most urgent", controller: "tasks", sort: "ASC"%>
-<br />
-<%= link_to "Sort by least urgent", controller: "tasks", sort: "DESC"%>
+<%= link_to "Sort by most urgent", { controller: "tasks", sort: "ASC" }, class: 'btn btn-dark btn-sort' %>
+<%= link_to "Sort by least urgent", { controller: "tasks", sort: "DESC" }, class: 'btn btn-dark btn-sort' %>
 
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Complete?</th>
@@ -32,5 +32,5 @@
 
 <br />
 
-<%= link_to 'Back', lists_path %> |
-<%= link_to 'New Task', new_list_task_path(@list) %>
+<%= link_to 'Back', lists_path %>
+<br />
