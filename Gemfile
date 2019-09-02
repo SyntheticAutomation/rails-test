@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.6'
+gem 'rails', '4.2'
 gem 'jquery-rails'
 gem 'uglifier'
+gem 'responders', '~> 2.0'
 
 group :test, :development do
   gem 'sqlite3'
