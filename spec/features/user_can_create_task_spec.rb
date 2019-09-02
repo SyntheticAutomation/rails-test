@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'A user who visits the app' do
   # -------------------------------------
-  it 'can create a task' do
+  it 'can create a task', type: :feature do
     list_1 = List.create(title: "Dogs I want")
 
     
@@ -18,7 +18,7 @@ describe 'A user who visits the app' do
     fill_in :task_name, with: "Poodle"
     fill_in :task_due_date, with: "2022-12-25"
 
-    click_on "Create Task"
+    click_on "Submit"
     expect(current_path).to eq("/lists/#{list_1.id}/tasks/#{Task.last.id}")
 
     click_on "Back"

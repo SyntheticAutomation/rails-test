@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'A user who visits the app' do
-  it 'can sort tasks by due date' do
+  it 'can sort tasks by due date', type: :feature do
     # -----------------------
     # mimic a user creating a bunch of tasks
     list_1 = List.create(title: "Dogs I want")
@@ -10,7 +10,7 @@ describe 'A user who visits the app' do
     click_on "New Task"
     fill_in :task_name, with: "Poodle"
     fill_in :task_due_date, with: "2022-12-25"
-    click_on "Create Task"
+    click_on "Submit"
 
 
     visit list_path(list_1.id)
@@ -18,7 +18,7 @@ describe 'A user who visits the app' do
     click_on "New Task"
     fill_in :task_name, with: "Husky"
     fill_in :task_due_date, with: "2022-12-29"
-    click_on "Create Task"
+    click_on "Submit"
 
 
     visit list_path(list_1.id)
@@ -26,7 +26,7 @@ describe 'A user who visits the app' do
     click_on "New Task"
     fill_in :task_name, with: "Scottish Terrier"
     fill_in :task_due_date, with: "2019-11-20"
-    click_on "Create Task"
+    click_on "Submit"
     # -----------------------
     visit list_tasks_path(list_1.id)
     expect(page).to have_content("Sort by most urgent")
