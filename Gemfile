@@ -10,4 +10,5 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'capybara'
   gem 'launchy'
+  gem 'json', '~>1.8.1'
 end
