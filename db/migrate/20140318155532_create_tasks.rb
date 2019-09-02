@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration
       t.boolean :complete
       t.string :due_date
 
-      t.belongs_to :list
+      t.references :list, foreign_key: true
 
       t.timestamps
     end
