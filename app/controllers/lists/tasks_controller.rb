@@ -32,7 +32,7 @@ class Lists::TasksController < ApplicationController
 
   # POST /lists/tasks
   def create
-    @task = Task.new(params[:task])
+    @task = Task.new(task_params)
     @task.list = @list
 
     if @task.save
@@ -46,7 +46,7 @@ class Lists::TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
 
-    if @task.update_attributes(params[:task])
+    if @task.update_attributes(task_params)
       redirect_to list_task_path(@list, @task), notice: 'Task was successfully updated.'
     else
       render action: "edit"
@@ -55,9 +55,15 @@ class Lists::TasksController < ApplicationController
 
   # DELETE /lists/tasks/1
   def destroy
-    @task = Task.find(params[:id])
+    @task = Task.find(task_params[:id])
     @task.destroy
 
     redirect_to list_tasks_path(@list)
+  end
+
+  private
+
+  def task_params
+    params.require(:task).permit(:id, :name, :complete, :due_date, :list_id)
   end
 end
